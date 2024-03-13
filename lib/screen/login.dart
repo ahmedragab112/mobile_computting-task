@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_computting/widget/custom_button.dart';
 import 'package:mobile_computting/widget/custom_textfiled.dart';
 
 class Login extends StatelessWidget {
@@ -11,23 +10,20 @@ class Login extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Login Screen App',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+        padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(
-              height: 20,
-            ),
             const Text(
               'Codeplayon',
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue),
+                  color: Colors.blueAccent),
               textAlign: TextAlign.center,
             ),
             const SizedBox(
@@ -45,25 +41,42 @@ class Login extends StatelessWidget {
               'Forgot Password',
               style: TextStyle(
                 fontSize: 15,
-                color: Colors.blue,
+                color: Colors.blueAccent,
               ),
             ),
             const SizedBox(
               height: 20,
             ),
-            const CustomButton(),
+            SizedBox(
+                width: double.infinity,
+                height: 40,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Login',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                )),
             const SizedBox(
               height: 20,
             ),
-            RichText(
-                text: const TextSpan(children: [
-              TextSpan(
-                  text: 'Dont have an account?    ',
-                  style: TextStyle(fontSize: 15, color: Colors.black)),
-              TextSpan(
-                  text: 'Sign Up',
-                  style: TextStyle(fontSize: 18, color: Colors.blue))
-            ]))
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Dont have an account?    ',
+                    style: TextStyle(fontSize: 15, color: Colors.black)),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Sign up ',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.blueAccent,
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
